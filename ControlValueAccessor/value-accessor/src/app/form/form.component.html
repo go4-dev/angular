@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="text-start w-25 p-1 my-5 m-auto">
+    <form [formGroup]="myForm">
+      <div class="mb-3">
+        <label class="form-label" for="validationCustom01">Custom input</label>
+        <app-custom-input
+          name="myInput"
+          formControlName="customInput"
+        ></app-custom-input>
+      </div>
+      <button
+        class="btn btn-primary"
+        type="submit"
+        [disabled]="myForm.invalid"
+        (click)="onSubmit()"
+      >
+        Submit form
+      </button>
+    </form>
+  </div>
+</div>

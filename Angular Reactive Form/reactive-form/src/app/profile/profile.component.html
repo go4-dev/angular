@@ -1,0 +1,118 @@
+<div class="container">
+  <div class="text-start w-25 p-1 my-5 m-auto">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label class="form-label" for="validationCustom01">First name</label>
+        <input
+          type="text"
+          class="form-control"
+          [class.is-invalid]="
+            userForm.controls['fName'].touched &&
+            userForm.controls['fName'].invalid
+          "
+          [class.is-valid]="
+            userForm.controls['fName'].touched &&
+            userForm.controls['fName'].valid
+          "
+          id="validationCustom01"
+          placeholder="First name"
+          formControlName="fName"
+        />
+        <div *ngIf="userForm.controls['fName'].touched">
+          <div
+            *ngIf="userForm.controls['fName'].invalid"
+            class="invalid-feedback"
+            [class.d-block]="userForm.controls['fName'].invalid"
+          >
+            Please enter a first name
+          </div>
+          <div
+            *ngIf="userForm.controls['fName'].valid"
+            class="valid-feedback"
+            [class.d-block]="userForm.controls['fName'].valid"
+          >
+            Looks good!
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="validationCustom02">Last name</label>
+        <input
+          type="text"
+          class="form-control"
+          [class.is-invalid]="
+            userForm.controls['lName'].touched &&
+            userForm.controls['lName'].invalid
+          "
+          [class.is-valid]="
+            userForm.controls['lName'].touched &&
+            userForm.controls['lName'].valid
+          "
+          id="validationCustom02"
+          placeholder="Last name"
+          formControlName="lName"
+        />
+        <div *ngIf="userForm.controls['lName'].touched">
+          <div
+            *ngIf="userForm.controls['lName'].invalid"
+            class="invalid-feedback"
+            [class.d-block]="userForm.controls['lName'].invalid"
+          >
+            Please enter a last name
+          </div>
+          <div
+            *ngIf="userForm.controls['lName'].valid"
+            class="valid-feedback"
+            [class.d-block]="userForm.controls['lName'].valid"
+          >
+            Looks good!
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="validationCustom04">Age</label>
+        <input
+          type="number"
+          class="form-control"
+          [class.is-invalid]="
+            userForm.controls['age'].touched && userForm.controls['age'].invalid
+          "
+          [class.is-valid]="
+            userForm.controls['age'].touched && userForm.controls['age'].valid
+          "
+          id="validationCustom04"
+          placeholder="Age"
+          formControlName="age"
+        />
+        <div *ngIf="userForm.controls['age'].touched">
+          <div
+            *ngIf="userForm.controls['age'].invalid"
+            class="invalid-feedback"
+            [class.d-block]="
+              userForm.controls['age'].touched &&
+              userForm.controls['age'].invalid
+            "
+          >
+            Please enter an age
+          </div>
+          <div
+            *ngIf="userForm.controls['age'].valid"
+            class="valid-feedback"
+            [class.d-block]="
+              userForm.controls['age'].touched && userForm.controls['age'].valid
+            "
+          >
+            Looks good!
+          </div>
+        </div>
+      </div>
+      <button
+        class="btn btn-primary"
+        type="submit"
+        [disabled]="userForm.invalid"
+      >
+        Submit form
+      </button>
+    </form>
+  </div>
+</div>
