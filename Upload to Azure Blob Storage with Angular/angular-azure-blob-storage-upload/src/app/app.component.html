@@ -1,0 +1,34 @@
+<h2>Pictures</h2>
+<table>
+  <tr>
+    <td>
+      <input type="file" (change)="imageSelected($event)">
+    </td>
+  </tr>
+  <tr>
+    <td>Insert SAS:</td>
+    <td>
+      <input type="text" (change)="setSas($event)" size="90">
+    </td>
+  </tr>
+  <tr>
+    <td>Current SAS:</td>
+    <td>{{ sas }}</td>
+  </tr>
+</table>
+<h4>List</h4>
+<table>
+  <tr *ngFor="let pic of picturesList">
+    <td>{{ pic }}</td>
+    <td>
+      <button (click)="downloadImage(pic)" download="pic">
+        DOWNLOAD
+      </button>
+    </td>
+    <td>
+      <button (click)="deleteImage(pic)">
+        DELETE
+      </button>
+    </td>
+  </tr>
+</table>
