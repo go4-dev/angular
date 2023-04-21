@@ -1,6 +1,7 @@
-<h2>Posts</h2>
+<h2>Persons</h2>
 <ul>
-  <li *ngFor="let post of posts">
-    {{ post.title }}
+  <li *ngFor="let person of persons">
+    {{ person.firstName }} {{ person.lastName }}
+    <button (click)="delete(person.id)">delete</button>
   </li>
 </ul>
